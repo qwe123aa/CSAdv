@@ -39,9 +39,9 @@ namespace CSAdv
         }
     }
 
-    class SquareCalculator
+    class SquareCalculator  
     {
-        public int this[int i]
+        public int this[int i]  //Indexer
         {
             get { return i * i; }
         }
@@ -59,6 +59,8 @@ namespace CSAdv
             Console.WriteLine(wantedString.Value);
             Console.WriteLine(wantedDouble.Value);
 
+            SquareCalculator s = new SquareCalculator();
+            Console.WriteLine(s[256]);
         }
     }
 }
