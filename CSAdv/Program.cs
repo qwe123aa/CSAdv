@@ -25,6 +25,28 @@ namespace CSAdv
         }
     }
 
+    class SpecialNeeded<T, U>
+        where T : IComparable
+        where U : IComparable, IDisposable
+    {
+        public T Value1;
+        public U Value2;
+        
+        public SpecialNeeded(T value1, U value2)
+        {
+            Value1 = value1;
+            Value2 = value2;
+        }
+    }
+
+    class SquareCalculator
+    {
+        public int this[int i]
+        {
+            get { return i * i; }
+        }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -36,6 +58,7 @@ namespace CSAdv
             Console.WriteLine(wantedInt.Value);
             Console.WriteLine(wantedString.Value);
             Console.WriteLine(wantedDouble.Value);
+
         }
     }
 }
