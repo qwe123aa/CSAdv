@@ -49,6 +49,13 @@ namespace CSAdv
 
     internal class Program
     {
+
+        struct Point
+        {
+            public int x;
+            public int y;
+        }
+
         static void NextPos(int x, int y, int vx, int vy, out int rx, out int ry)
         {
             rx = x + vx;
@@ -86,6 +93,12 @@ namespace CSAdv
             Console.WriteLine("현재좌표  x : {0}, y : {1}", x, y);
             NextPos(x, y, vx, vy, out x, out y);
             Console.WriteLine("다음좌표  x : {0}, y : {1}", x, y);
+
+            //Point 구조체 실습
+            Point point;    //구조체 변수 선언, 8바이트 잡힘
+            point.x = 10;   //구조체 변수는 반드시 초기화 해야함 (컴파일 에러)
+            point.y = 10;
+            Console.WriteLine("point.x : {0}, point.y : {1}", point.x, point.y);
         }
     }
 }
